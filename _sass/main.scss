@@ -14,6 +14,7 @@ html, body {
 
 header {
   margin-bottom: 1em;
+  font-size: 1em;
   :after{
     content: ".";
     display: block;
@@ -63,6 +64,10 @@ a {
   }
 }
 
+article {
+  margin-bottom: 1.7em;
+}
+
 footer {
   border-top: 2px solid #dddddd;
   text-align: right;
@@ -70,7 +75,15 @@ footer {
   font-size: 90%;
 }
 
+small {
+  color: #666666;
+}
+
 .current {
   font-weight: bold;
   color: $primary-color;
+}
+
+.love {
+  color: #ec2e2e;
 }
