@@ -7,6 +7,8 @@
     {% seo %}
     <title>{{ page.title }}</title>
     <link rel="stylesheet" href="/assets/css/styles.css">
+    <!-- Highlight.js -->
+    <link rel="stylesheet" href="/assets/styles/default.css">
 </head>
 
 <body>
@@ -15,6 +17,8 @@
         {{ content }}
     </article>
     {% include footer.html %}
-</body>
 
+    <script src="/assets/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
 </html>
