@@ -6,21 +6,29 @@ Challenge ini kita akan diminta untuk mencari ingatan asuna yang hilang di aplik
 
 Hal pertama yang aku lakukan adalah menginstall aplikasinya. Setelah itu aku buka, dan berikut adalah tampilan pertamanya.
 
-![tampilan pertama aplikasi](/assets/images/photo_2018-11-12_23-24-01.jpg)
+<a href="/assets/images/photo_2018-11-12_23-24-01.jpg" target="_blank">
+    <img src="/assets/images/photo_2018-11-12_23-24-01.jpg" style='width:100%;' border="0" alt="tampilan pertama aplikasi">
+</a>
 
 Aku lihat ada pesan *Reverse me dan Dapatkan Flag*, dari pesan itu aku langsung coba extract file .apk di laptop dengan perintah `unzip`. Isi filenya seperti ini.
 
-![gambar hasil extract](/assets/images/photo_2018-11-12_23-26-22.jpg)
+<a href="/assets/images/photo_2018-11-12_23-26-22.jpg" target="_blank">
+    <img src="/assets/images/photo_2018-11-12_23-26-22.jpg" style='width:100%;' border="0" alt="gambar hasil extract">
+</a>
 
 Setelah itu, aku coba buka isi filenya dengan menggunakan `vim`, termasuk file classes.dex . Ternyata isinya tidak bisa kebaca. Aku coba lagi dengan perintah _%!xxd_ sedikit bisa terbaca, tapi tidak menemukan sesuatu apapun yang menarik di sana. Aku coba untuk break dahulu setelah itu. Kemudian aku coba browsing di google tentang reversing apk dan mendapat petunjuk dari sini <https://stackoverflow.com/questions/12732882/reverse-engineering-from-an-apk-file-to-a-project>.
 
 Setelah membaca itu, ternyata aku perlu menginstall aplikasi **dex2jar** untuk membaca file _classes.dex_ di dalam folder hasil extract apk nya. Langsung saja aku coba install itu dan kemudian kujalankan dan akhirnya aku mendapatkan file _classes-dex2jar.jar_ .
 
-![gambar proses dex2jar](/assets/images/photo_2018-11-13_05-12-31.jpg)
+<a href="/assets/images/photo_2018-11-13_05-12-31.jpg" target="_blank">
+    <img src="/assets/images/photo_2018-11-13_05-12-31.jpg" style='width:100%;' border="0" alt="gambar proses dex2jar">
+</a>
 
 Kemudian sesuai petunjuk tadi, file *.jar* nya aku buka dengan aplikasi **JD-GUI** . Dan ternyata waw, aku bisa melihat file *.java* nya. 
 
-![gambar saat dibuka di aplikasi jd-gui](/assets/images/2018-11-12-234748_1366x768_scrot.png)
+<a href="/assets/images/2018-11-12-234748_1366x768_scrot.png" target="_blank">
+    <img src="/assets/images/2018-11-12-234748_1366x768_scrot.png" style='width:100%;' border="0" alt="gambar saat dibuka di aplikasi jd-gui">
+</a>
 
 Setelah itu, aku langsung tertuju dengan file _MainActivity.class_ karena biasanya file ini yang biasa dipanggil pertama. Berikut isi file nya.
 
@@ -52,7 +60,9 @@ public class MainActivity
 
 Dari file itu aku lihat dia melakukan log untuk flag nya. Dari pengalaman develop android, log ini bisa dibaca dengan dengan perintah `adb logcat`. Langsung aku coba colokkan hpku dengan laptop dan menjalankan perintah itu. Tapi sebelumnya aku tambahkan perintah `grep Flag` untuk memudahkan membaca logcatnya. Berikut hasilnya.
 
-![gambar dari logcat](/assets/images/2018-11-12-235658_1366x768_scrot.png)
+<a href="/assets/images/2018-11-12-235658_1366x768_scrot.png" target="_blank">
+    <img src="/assets/images/2018-11-12-235658_1366x768_scrot.png" style='width:100%;' border="0" alt="gambar dari logcat">
+</a>
 
 Aku merasa aku sudah berhasil disini, karena aku sudah dapat flagnya. Tapi kenapa flag nya aneh yaitu _U0hMe3NpbXBsZV9DVFI0OTYwWVZBUl8qUkVEQUNURUQqX1JFVkVSU0V9_. 
 
@@ -104,7 +114,9 @@ public class HelloWorld {
 ```
 Dan ini hasilnya **SHL{simple_G3480E0UXFU__asuna_<3_me__REVERSE}**. Kemudian aku screenshoot dan kirim ke Dark Assassin.
 
-![gambar dari logcat](/assets/images/2018-11-13-044009_1366x768_scrot.png)
+<a href="/assets/images/2018-11-13-044009_1366x768_scrot.png" target="_blank">
+    <img src="/assets/images/2018-11-13-044009_1366x768_scrot.png" style='width:100%;' border="0" alt="gambar hasil complie">
+</a>
 
 Dan ternyata benar, Terima kasih.
 
