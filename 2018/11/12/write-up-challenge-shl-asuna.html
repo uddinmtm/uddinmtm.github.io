@@ -52,21 +52,29 @@ Challenge ini kita akan diminta untuk mencari ingatan asuna yang hilang di aplik
 
 <p>Hal pertama yang aku lakukan adalah menginstall aplikasinya. Setelah itu aku buka, dan berikut adalah tampilan pertamanya.</p>
 
-<p><img src="/assets/images/photo_2018-11-12_23-24-01.jpg" alt="tampilan pertama aplikasi" /></p>
+<p><a href="/assets/images/photo_2018-11-12_23-24-01.jpg" target="_blank">
+    <img src="/assets/images/photo_2018-11-12_23-24-01.jpg" style="width:100%;" border="0" alt="tampilan pertama aplikasi" />
+</a></p>
 
 <p>Aku lihat ada pesan <em>Reverse me dan Dapatkan Flag</em>, dari pesan itu aku langsung coba extract file .apk di laptop dengan perintah <code class="highlighter-rouge">unzip</code>. Isi filenya seperti ini.</p>
 
-<p><img src="/assets/images/photo_2018-11-12_23-26-22.jpg" alt="gambar hasil extract" /></p>
+<p><a href="/assets/images/photo_2018-11-12_23-26-22.jpg" target="_blank">
+    <img src="/assets/images/photo_2018-11-12_23-26-22.jpg" style="width:100%;" border="0" alt="gambar hasil extract" />
+</a></p>
 
 <p>Setelah itu, aku coba buka isi filenya dengan menggunakan <code class="highlighter-rouge">vim</code>, termasuk file classes.dex . Ternyata isinya tidak bisa kebaca. Aku coba lagi dengan perintah <em>%!xxd</em> sedikit bisa terbaca, tapi tidak menemukan sesuatu apapun yang menarik di sana. Aku coba untuk break dahulu setelah itu. Kemudian aku coba browsing di google tentang reversing apk dan mendapat petunjuk dari sini <a href="https://stackoverflow.com/questions/12732882/reverse-engineering-from-an-apk-file-to-a-project">https://stackoverflow.com/questions/12732882/reverse-engineering-from-an-apk-file-to-a-project</a>.</p>
 
 <p>Setelah membaca itu, ternyata aku perlu menginstall aplikasi <strong>dex2jar</strong> untuk membaca file <em>classes.dex</em> di dalam folder hasil extract apk nya. Langsung saja aku coba install itu dan kemudian kujalankan dan akhirnya aku mendapatkan file <em>classes-dex2jar.jar</em> .</p>
 
-<p><img src="/assets/images/photo_2018-11-13_05-12-31.jpg" alt="gambar proses dex2jar" /></p>
+<p><a href="/assets/images/photo_2018-11-13_05-12-31.jpg" target="_blank">
+    <img src="/assets/images/photo_2018-11-13_05-12-31.jpg" style="width:100%;" border="0" alt="gambar proses dex2jar" />
+</a></p>
 
 <p>Kemudian sesuai petunjuk tadi, file <em>.jar</em> nya aku buka dengan aplikasi <strong>JD-GUI</strong> . Dan ternyata waw, aku bisa melihat file <em>.java</em> nya.</p>
 
-<p><img src="/assets/images/2018-11-12-234748_1366x768_scrot.png" alt="gambar saat dibuka di aplikasi jd-gui" /></p>
+<p><a href="/assets/images/2018-11-12-234748_1366x768_scrot.png" target="_blank">
+    <img src="/assets/images/2018-11-12-234748_1366x768_scrot.png" style="width:100%;" border="0" alt="gambar saat dibuka di aplikasi jd-gui" />
+</a></p>
 
 <p>Setelah itu, aku langsung tertuju dengan file <em>MainActivity.class</em> karena biasanya file ini yang biasa dipanggil pertama. Berikut isi file nya.</p>
 
@@ -97,7 +105,9 @@ Challenge ini kita akan diminta untuk mencari ingatan asuna yang hilang di aplik
 
 <p>Dari file itu aku lihat dia melakukan log untuk flag nya. Dari pengalaman develop android, log ini bisa dibaca dengan dengan perintah <code class="highlighter-rouge">adb logcat</code>. Langsung aku coba colokkan hpku dengan laptop dan menjalankan perintah itu. Tapi sebelumnya aku tambahkan perintah <code class="highlighter-rouge">grep Flag</code> untuk memudahkan membaca logcatnya. Berikut hasilnya.</p>
 
-<p><img src="/assets/images/2018-11-12-235658_1366x768_scrot.png" alt="gambar dari logcat" /></p>
+<p><a href="/assets/images/2018-11-12-235658_1366x768_scrot.png" target="_blank">
+    <img src="/assets/images/2018-11-12-235658_1366x768_scrot.png" style="width:100%;" border="0" alt="gambar dari logcat" />
+</a></p>
 
 <p>Aku merasa aku sudah berhasil disini, karena aku sudah dapat flagnya. Tapi kenapa flag nya aneh yaitu <em>U0hMe3NpbXBsZV9DVFI0OTYwWVZBUl8qUkVEQUNURUQqX1JFVkVSU0V9</em>.</p>
 
@@ -148,7 +158,9 @@ Challenge ini kita akan diminta untuk mencari ingatan asuna yang hilang di aplik
 </code></pre></div></div>
 <p>Dan ini hasilnya <strong>SHL{simple_G3480E0UXFU__asuna_&lt;3_me__REVERSE}</strong>. Kemudian aku screenshoot dan kirim ke Dark Assassin.</p>
 
-<p><img src="/assets/images/2018-11-13-044009_1366x768_scrot.png" alt="gambar dari logcat" /></p>
+<p><a href="/assets/images/2018-11-13-044009_1366x768_scrot.png" target="_blank">
+    <img src="/assets/images/2018-11-13-044009_1366x768_scrot.png" style="width:100%;" border="0" alt="gambar hasil complie" />
+</a></p>
 
 <p>Dan ternyata benar, Terima kasih.</p>
 
