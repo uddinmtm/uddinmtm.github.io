@@ -1,0 +1,189 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Write Up Challenge Shl Asuna</title>
+<meta name="generator" content="Jekyll v3.8.4" />
+<meta property="og:title" content="Write Up Challenge Shl Asuna" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Hai, kali ini aku mau nulis write up challenge dari SHL. Ini adalah WU pertamaku jadi mohon maklum. Challenge ini kita akan diminta untuk mencari ingatan asuna yang hilang di aplikasi android yang diberikan." />
+<meta property="og:description" content="Hai, kali ini aku mau nulis write up challenge dari SHL. Ini adalah WU pertamaku jadi mohon maklum. Challenge ini kita akan diminta untuk mencari ingatan asuna yang hilang di aplikasi android yang diberikan." />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-11-12T00:00:00+07:00" />
+<script type="application/ld+json">
+{"description":"Hai, kali ini aku mau nulis write up challenge dari SHL. Ini adalah WU pertamaku jadi mohon maklum. Challenge ini kita akan diminta untuk mencari ingatan asuna yang hilang di aplikasi android yang diberikan.","@type":"BlogPosting","headline":"Write Up Challenge Shl Asuna","url":"/2018/11/12/write-up-challenge-shl-asuna.html","dateModified":"2018-11-12T00:00:00+07:00","datePublished":"2018-11-12T00:00:00+07:00","mainEntityOfPage":{"@type":"WebPage","@id":"/2018/11/12/write-up-challenge-shl-asuna.html"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <title>Write Up Challenge Shl Asuna</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <!-- Highlight.js -->
+    <link rel="stylesheet" href="/assets/styles/default.css">
+</head>
+
+<body>
+    <header>
+    <nav>
+        <ul>
+            
+            <li>
+                <a href="/" >
+                    [Home]
+                </a>
+            </li>
+            
+            <li>
+                <a href="/blog.html" >
+                    [Blog]
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</header>
+    <article>
+        <h1>Write Up Challenge Shl Asuna</h1>
+<small>12 Nov 2018</small>
+
+<p>Hai, kali ini aku mau nulis write up challenge dari SHL. Ini adalah WU pertamaku jadi mohon maklum.
+Challenge ini kita akan diminta untuk mencari ingatan asuna yang hilang di aplikasi android yang diberikan.</p>
+
+<p>Hal pertama yang aku lakukan adalah menginstall aplikasinya. Setelah itu aku buka, dan berikut adalah tampilan pertamanya.</p>
+
+<p><img src="/assets/images/photo_2018-11-12_23-24-01.jpg" alt="tampilan pertama aplikasi" /></p>
+
+<p>Aku lihat ada pesan <em>Reverse me dan Dapatkan Flag</em>, dari pesan itu aku langsung coba extract file .apk di laptop dengan perintah <code class="highlighter-rouge">unzip</code>. Isi filenya seperti ini.</p>
+
+<p><img src="/assets/images/photo_2018-11-12_23-26-22.jpg" alt="gambar hasil extract" /></p>
+
+<p>Setelah itu, aku coba buka isi filenya dengan menggunakan <code class="highlighter-rouge">vim</code>, termasuk file classes.dex . Ternyata isinya tidak bisa kebaca. Aku coba lagi dengan perintah <em>%!xxd</em> sedikit bisa terbaca, tapi tidak menemukan sesuatu apapun yang menarik di sana. Aku coba untuk break dahulu setelah itu. Kemudian aku coba browsing di google tentang reversing apk dan mendapat petunjuk dari sini <a href="https://stackoverflow.com/questions/12732882/reverse-engineering-from-an-apk-file-to-a-project">https://stackoverflow.com/questions/12732882/reverse-engineering-from-an-apk-file-to-a-project</a>.</p>
+
+<p>Setelah membaca itu, ternyata aku perlu menginstall aplikasi <strong>dex2jar</strong> untuk membaca file <em>classes.dex</em> di dalam folder hasil extract apk nya. Langsung saja aku coba install itu dan kemudian kujalankan dan akhirnya aku mendapatkan file <em>classes-dex2jar.jar</em> .</p>
+
+<p><img src="/assets/images/photo_2018-11-13_05-12-31.jpg" alt="gambar proses dex2jar" /></p>
+
+<p>Kemudian sesuai petunjuk tadi, file <em>.jar</em> nya aku buka dengan aplikasi <strong>JD-GUI</strong> . Dan ternyata waw, aku bisa melihat file <em>.java</em> nya.</p>
+
+<p><img src="/assets/images/2018-11-12-234748_1366x768_scrot.png" alt="gambar saat dibuka di aplikasi jd-gui" /></p>
+
+<p>Setelah itu, aku langsung tertuju dengan file <em>MainActivity.class</em> karena biasanya file ini yang biasa dipanggil pertama. Berikut isi file nya.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="n">org</span><span class="o">.</span><span class="na">chall_reverse_android</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">android.os.Bundle</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">android.support.v7.app.AppCompatActivity</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">android.util.Log</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MainActivity</span>
+  <span class="kd">extends</span> <span class="n">AppCompatActivity</span>
+<span class="o">{</span>
+  <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">paramBundle</span><span class="o">)</span>
+  <span class="o">{</span>
+    <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">paramBundle</span><span class="o">);</span>
+    <span class="n">setContentView</span><span class="o">(</span><span class="mi">2131296283</span><span class="o">);</span>
+    <span class="n">paramBundle</span> <span class="o">=</span> <span class="k">new</span> <span class="n">challenges</span><span class="o">();</span>
+    <span class="n">StringBuilder</span> <span class="n">localStringBuilder</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuilder</span><span class="o">();</span>
+    <span class="n">localStringBuilder</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">"Your Flag is "</span><span class="o">);</span>
+    <span class="n">localStringBuilder</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">paramBundle</span><span class="o">.</span><span class="na">anu</span><span class="o">());</span>
+    <span class="n">localStringBuilder</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">"But the middle Flag is Missing :(("</span><span class="o">);</span>
+    <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="s">"Flag"</span><span class="o">,</span> <span class="n">localStringBuilder</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+    <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="s">"Flag"</span><span class="o">,</span> <span class="s">"Help me To Find it :(((("</span><span class="o">);</span>
+    <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="s">"Secret"</span><span class="o">,</span> <span class="s">"Get it from Reverse to get Lost string"</span><span class="o">);</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Dari file itu aku lihat dia melakukan log untuk flag nya. Dari pengalaman develop android, log ini bisa dibaca dengan dengan perintah <code class="highlighter-rouge">adb logcat</code>. Langsung aku coba colokkan hpku dengan laptop dan menjalankan perintah itu. Tapi sebelumnya aku tambahkan perintah <code class="highlighter-rouge">grep Flag</code> untuk memudahkan membaca logcatnya. Berikut hasilnya.</p>
+
+<p><img src="/assets/images/2018-11-12-235658_1366x768_scrot.png" alt="gambar dari logcat" /></p>
+
+<p>Aku merasa aku sudah berhasil disini, karena aku sudah dapat flagnya. Tapi kenapa flag nya aneh yaitu <em>U0hMe3NpbXBsZV9DVFI0OTYwWVZBUl8qUkVEQUNURUQqX1JFVkVSU0V9</em>.</p>
+
+<p>Langsung saja aku coba decode di terminal dengan perintah <code class="highlighter-rouge">echo 'U0hMe3NpbXBsZV9DVFI0OTYwWVZBUl8qUkVEQUNURUQqX1JFVkVSU0V9' | base64 -d</code> dan hasilnya <code class="highlighter-rouge">SHL{simple_CTR4960YVAR_*REDACTED*_REVERSE}</code> . Kemudian aku baca lagi baik-baik lognya, ternyata aku masih disuruh untuk menemukan bagian tengah yang hilang.</p>
+
+<p>Tetap semangat, aku coba baca lagi alur kerja aplikasinya dari file <em>.java</em> . Sampai akhirnya aku menemukan ada file yang aneh yaitu <em>secret_flag.class</em>, karena dia tidak dipanggil di <em>challenges.class</em>.</p>
+
+<p>Kemudian aku coba copy isi file <em>secret_flag.class</em>, kemudian menambahkan script untuk menampilkan value nya. Dan coba ku jalankan, hasilnya <code class="highlighter-rouge">_asuna_&lt;3_me_</code> . Waw, sepertinya aku udah berhasil ini. Agar tampilan flag nya lengkap, aku coba koding ulang khusus untuk menampilkan flag builder nya saja dengan mereplace <code class="highlighter-rouge">*REDACTED*</code> dengan <em>secret_flag</em>, dan aku jalankan di compiler online java. Berikut kodenya.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">java.util.Random</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">HelloWorld</span> <span class="o">{</span>
+
+	<span class="c1">// anu kedua</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="n">String</span> <span class="nf">StringAnu</span><span class="o">()</span> <span class="o">{</span>
+		<span class="kt">char</span><span class="o">[]</span> <span class="n">chars1</span> <span class="o">=</span> <span class="s">"ABCDEF012GHIJKL345MNOPQR678STUVWXYZ9"</span><span class="o">.</span><span class="na">toCharArray</span><span class="o">();</span>
+		<span class="n">Random</span> <span class="n">r</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Random</span><span class="o">();</span>
+		<span class="n">StringBuilder</span> <span class="n">sb1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuilder</span><span class="o">();</span>
+		<span class="kt">char</span><span class="o">[]</span> <span class="n">str_2</span> <span class="o">=</span> <span class="o">{</span> <span class="mi">115</span><span class="o">,</span> <span class="mi">105</span><span class="o">,</span> <span class="mi">109</span><span class="o">,</span> <span class="mi">112</span><span class="o">,</span> <span class="mi">108</span><span class="o">,</span> <span class="mi">101</span><span class="o">,</span> <span class="mi">95</span> <span class="o">};</span>
+				
+		<span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+		<span class="k">while</span> <span class="o">(</span><span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="o">)</span>
+		<span class="o">{</span>
+			<span class="kt">char</span> <span class="n">c</span> <span class="o">=</span> <span class="n">chars1</span><span class="o">[</span><span class="n">r</span><span class="o">.</span><span class="na">nextInt</span><span class="o">(</span><span class="n">chars1</span><span class="o">.</span><span class="na">length</span><span class="o">)];</span>
+			<span class="n">sb1</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">c</span><span class="o">);</span>
+			<span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span><span class="o">;</span>
+		<span class="o">}</span>
+		<span class="n">StringBuilder</span> <span class="n">localStringBuilder</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuilder</span><span class="o">();</span>
+		<span class="n">localStringBuilder</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">String</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">str_2</span><span class="o">));</span>
+		<span class="n">localStringBuilder</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">sb1</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+		<span class="n">localStringBuilder</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">"_"</span><span class="o">);</span>
+		<span class="k">return</span> <span class="n">localStringBuilder</span><span class="o">.</span><span class="na">toString</span><span class="o">();</span>
+	<span class="o">}</span>
+				
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span> <span class="o">[]</span><span class="n">args</span><span class="o">){</span>
+		<span class="kt">char</span><span class="o">[]</span> <span class="n">anu_pertama</span> <span class="o">=</span> <span class="o">{</span> <span class="mi">83</span><span class="o">,</span> <span class="mi">72</span><span class="o">,</span> <span class="mi">76</span><span class="o">,</span> <span class="mi">123</span> <span class="o">};</span>
+		<span class="kt">char</span><span class="o">[]</span> <span class="n">anu_ketiga</span> <span class="o">=</span> <span class="o">{</span> <span class="mi">95</span><span class="o">,</span> <span class="mi">82</span><span class="o">,</span> <span class="mi">69</span><span class="o">,</span> <span class="mi">86</span><span class="o">,</span> <span class="mi">69</span><span class="o">,</span> <span class="mi">82</span><span class="o">,</span> <span class="mi">83</span><span class="o">,</span> <span class="mi">69</span><span class="o">,</span> <span class="mi">125</span> <span class="o">};</span>
+		<span class="kt">char</span><span class="o">[]</span> <span class="n">asuna</span> <span class="o">=</span> <span class="o">{</span> <span class="mi">95</span><span class="o">,</span> <span class="mi">97</span><span class="o">,</span> <span class="mi">115</span><span class="o">,</span> <span class="mi">117</span><span class="o">,</span> <span class="mi">110</span><span class="o">,</span> <span class="mi">97</span><span class="o">,</span> <span class="mi">95</span><span class="o">,</span> <span class="mi">60</span><span class="o">,</span> <span class="mi">51</span><span class="o">,</span> <span class="mi">95</span><span class="o">,</span> <span class="mi">109</span><span class="o">,</span> <span class="mi">101</span><span class="o">,</span> <span class="mi">95</span> <span class="o">};</span>
+						
+		<span class="n">StringBuilder</span> <span class="n">localStringBuilder</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuilder</span><span class="o">();</span>
+		<span class="n">localStringBuilder</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">String</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">anu_pertama</span><span class="o">));</span>
+		<span class="n">localStringBuilder</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">StringAnu</span><span class="o">());</span>
+		<span class="n">localStringBuilder</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">String</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">asuna</span><span class="o">));</span>
+		<span class="n">localStringBuilder</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">String</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">anu_ketiga</span><span class="o">));</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">localStringBuilder</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+<p>Dan ini hasilnya <strong>SHL{simple_G3480E0UXFU__asuna_&lt;3_me__REVERSE}</strong>. Kemudian aku screenshoot dan kirim ke Dark Assassin.</p>
+
+<p><img src="/assets/images/2018-11-13-044009_1366x768_scrot.png" alt="gambar dari logcat" /></p>
+
+<p>Dan ternyata benar, Terima kasih.</p>
+
+
+
+
+<div id="disqus_thread"></div>
+<script>
+
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function () { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://uddinmtm-github-io.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the
+    <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+
+    </article>
+    <footer>
+    <p>Dibuat dengan <i class="love">&hearts;</i> oleh <a href="mailto:saifuddinmutammam@gmail.com">fuddin</a></p>
+</footer>
+
+    <script src="/assets/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
