@@ -162,13 +162,13 @@
 
 <p>Dari write up di atas, aku kira mirip dengan masalah yang aku hadapi. Dan aku dapat juga solver code nya. Aku copy dan modifikasi seperti ini.</p>
 
-<pre><code class="language-phyton">def sxor(s1,s2):    
-    return ''.join(chr(ord(a) ^ ord(b)) for a,b in zip(s1,s2))
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">sxor</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span><span class="n">s2</span><span class="p">):</span>    
+    <span class="k">return</span> <span class="s">''</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">^</span> <span class="nb">ord</span><span class="p">(</span><span class="n">b</span><span class="p">))</span> <span class="k">for</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span><span class="n">s2</span><span class="p">))</span>
 
-s = "_D@wje~ x`&lt;z?zeoiSocaambhi~GE@@I^q"
-for x in range(128):
-    print sxor(chr(x)*len(s),s)
-</code></pre>
+<span class="n">s</span> <span class="o">=</span> <span class="s">"_D@wje~ x`&lt;z?zeoiSocaambhi~GE@@I^q"</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">128</span><span class="p">):</span>
+    <span class="k">print</span> <span class="n">sxor</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">),</span><span class="n">s</span><span class="p">)</span>
+</code></pre></div></div>
 
 <p>Kemudian aku jalankan, aku mendapat output seperti ini. Ini potongannya.</p>
 
