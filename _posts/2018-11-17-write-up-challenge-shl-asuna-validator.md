@@ -119,7 +119,7 @@ Setelah lama di kondisi tersebut, aku coba browsing lagi namun kali ini aku coba
 
 Dari write up di atas, aku kira mirip dengan masalah yang aku hadapi. Dan aku dapat juga solver code nya. Aku copy dan modifikasi seperti ini.
 
-```phyton
+```python
 def sxor(s1,s2):    
     return ''.join(chr(ord(a) ^ ord(b)) for a,b in zip(s1,s2))
 
