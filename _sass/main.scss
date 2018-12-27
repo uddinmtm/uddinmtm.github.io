@@ -11,6 +11,7 @@ html, body {
   font-size: 1em;
   background-color: white;
   word-wrap: break-word;
+  line-height: 1.5em;
 }
 
 header {
@@ -18,7 +19,6 @@ header {
   font-size: 1em;
   :after{
     content: ".";
-    display: block;
     height: 0;
     clear: both;
     visibility: hidden;
