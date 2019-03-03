@@ -2,7 +2,7 @@
 comments: true
 ---
 
-Apakah kalian pernah menggunakan PHP mode interaktif?. mode interaktif adalah mode dimana kita bisa menjalankan perintah PHP yang hasilnya bisa kita dapatkan secara langsung setelah kita jalankan perintahnya. Jadi kita tidak membutuhkah file PHP untuk menjalankan perintahnya. Dan ini akan memudahkan kita untuk mencoba suatu perintah baru, mengecek suatu kondisi dari algoritma kita, mencetak enkripsi dari suatu kata atau kalimat, dan masih banyak lagi tentunya.
+Apakah kalian pernah menggunakan PHP mode interaktif?. Mode interaktif adalah mode dimana kita bisa menjalankan perintah PHP yang hasilnya bisa kita dapatkan secara langsung setelah kita jalankan perintahnya. Jadi kita tidak membutuhkah file PHP untuk menjalankan perintahnya. Dan ini akan memudahkan kita untuk mencoba suatu perintah baru, mengecek suatu kondisi dari algoritma kita, mencetak enkripsi dari suatu kata atau kalimat, dan masih banyak lagi tentunya.
 
 Berikut langkahnya:
 1. Karena mode ini jalan pada konsol atau terminal maka buka terminal terlebih dahulu.
