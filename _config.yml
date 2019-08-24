@@ -1,3 +1,5 @@
+title: "uddin's Blog"
+description: "uddin IT experience notes"
 defaults:  
   - scope:
       path: ""
@@ -8,3 +10,5 @@ defaults:
       path: ""
     values:
       layout: "default"
+plugins:
+    - jekyll-seo-tag
