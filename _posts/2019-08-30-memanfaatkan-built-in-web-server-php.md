@@ -34,7 +34,7 @@ Press Ctrl-C to quit.
 
 ```
 
-setelah sukses seperti diatas, untuk melihat webnya cukup dengan akses http://localhost:7676 saja. Dan seperti ini hssil desain tampilannya.
+Setelah sukses seperti diatas, untuk melihat webnya cukup dengan akses http://localhost:7676 saja. Dan seperti ini hasil desain tampilannya.
 
 <a href="/assets/images/2019-08-30-220707_1365x715_scrot.png" target="_blank">
     <img src="/assets/images/2019-08-30-220707_1365x715_scrot.png" style='width:100%;' border="0" alt="tampilan wordpress">
