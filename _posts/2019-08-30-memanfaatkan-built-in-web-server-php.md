@@ -2,7 +2,7 @@
 comments: true
 ---
 
-Buit-in web server, fitur ini sangat berguna untuk developer web terutama dalam proses development.
+Buit-in web server, fitur ini sangat berguna untuk web developer terutama dalam proses development.
 
 ### Berikut beberapa keuntungannya :
 1. Tidak perlu lagi install program apache sebagai web server. Hanya perlu install PHP saja
