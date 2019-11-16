@@ -18,7 +18,7 @@ Hai, aku mau sharing pengalaman mencoba layanan dari <a href="https://chat-api.c
 Berikut source percobaanya menggunakan PHP.
 
 ### Send Messsage
-Di sini aku coba kirim pesan ke 628912345678 (62 kode negara harus diberikan) dengan pesan "Hello!".
+Di sini aku coba kirim pesan ke 6289678528565 (62 kode negara harus diberikan) dengan pesan "Hello!".
 ```php
 <?php
 $data = [
@@ -50,7 +50,7 @@ Kita dapat response berupa json
 Pesan akan masuk antrian pengiriman terlebih dahulu.
 
 ### Send File
-Oke, lanjut coba kirim pesan ke 628912345678 (62 kode negara harus diberikan) dengan file pdf. Kita cukup menyiapkan link file nya aja dan itu harus online dan menggunakan ssl (https) seperti ini https://www.soundczech.cz/temp/lorem-ipsum.pdf.
+Oke, lanjut coba kirim pesan ke nomor yang sama dengan file pdf. Kita cukup menyiapkan link file nya aja dan itu harus online dan menggunakan ssl (https) seperti ini https://www.soundczech.cz/temp/lorem-ipsum.pdf.
 ```php
 <?php
 $data = [
