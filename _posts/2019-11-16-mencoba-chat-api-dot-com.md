@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 <a href="/assets/images/2019-11-16-113324_1366x768_scrot.png" target="_blank">
     <img src="/assets/images/2019-11-16-113324_1366x768_scrot.png" style='width:100%;' border="0" alt="landing page chat-api.com">
 </a>
