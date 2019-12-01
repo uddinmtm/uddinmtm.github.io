@@ -18,7 +18,7 @@ Btw, pilihlah data yang cenderung statis untuk disimpan di cache ya. Dan contoh 
 - Redis sudah terinstall
 
 ```bash
-ikrenet :: ~ » redis-cli --version                                                                                                    
+ikrenet :: ~ » redis-cli --version
 redis-cli 5.0.6
 ikrenet :: ~ » redis-server --version
 Redis server v=5.0.6 sha=00000000:0 malloc=jemalloc-5.2.1 bits=64 build=862f233732e771fd
