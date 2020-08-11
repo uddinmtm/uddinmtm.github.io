@@ -55,4 +55,5 @@ Untuk gambar selanjutnya adalah oret-oretan untuk tampilan webnya.
 
 ...
 
-Cukup sampai ini saja, Lanjut ke tahap selanjutnya yaitu membuat database
+Cukup sampai ini saja, Lanjut ke tahap selanjutnya yaitu membuat database.
+<a href="/2020/08/09/sistem-inventori-sederhana-2.html">Selanjutnya</a>

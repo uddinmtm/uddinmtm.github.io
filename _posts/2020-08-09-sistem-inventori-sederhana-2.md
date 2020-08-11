@@ -94,4 +94,5 @@ CREATE TABLE `t_stock_detail` (
 ```
 ...
 
-Selanjutnya kita mulai buatkan tampilan webnya
+Selanjutnya kita mulai buatkan tampilan webnya.
+<a href="/2020/08/11/sistem-inventori-sederhana-3.html">Selanjutnya</a>
