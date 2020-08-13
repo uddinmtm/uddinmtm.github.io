@@ -92,6 +92,8 @@ CREATE TABLE `t_stock_detail` (
   CONSTRAINT `t_stock_detail_FK` FOREIGN KEY (`item_id`) REFERENCES `m_item` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 ```
+Kenapa aku buat tabel `t_stock_detail` ini?. Karena dengan tabel ini aku bisa menyimpan banyak `item_id` untuk setiap satu transaksi semisal barang masuk/keluar.
+
 ...
 
 Selanjutnya kita mulai buatkan tampilan webnya.
