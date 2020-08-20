@@ -27,6 +27,8 @@ Pada halaman login ini, setelah si user meng-klik tombol Login, dengan bantuan j
 
 Seperti ini:
 
+- Sisi _frontend_
+
 ```javascript
 $('#frmLogin').submit(function(e) {
     $.ajax({
@@ -45,3 +47,38 @@ $('#frmLogin').submit(function(e) {
 });
 ```
 Link <a href="https://raw.githubusercontent.com/uddinmtm/inventori/master/public/index.php" target="_blank">file</a>.
+
+- Sisi _backend_
+
+```php
+...
+
+$username = mysqli_real_escape_string($conn, $_POST['username']);
+$password = md5($_POST['password']);
+
+$sql = "SELECT * FROM m_user WHERE username='$username'";
+$results = mysqli_query($conn, $sql);
+if (mysqli_num_rows($results) == 0) {
+    echo json_encode(['message' => 'username not found']);
+    http_response_code(400);
+    die();
+}
+
+$user =  mysqli_fetch_assoc($results);
+if ($user['password'] !== $password) {
+    echo json_encode(['message' => 'wrong password']);
+    http_response_code(400);
+    die();
+}
+
+// set session
+$_SESSION["name"] = $user['name'];
+$_SESSION["username"] = $user['username'];
+
+echo json_encode("success");
+```
+Link <a href="https://raw.githubusercontent.com/uddinmtm/inventori/master/public/actions/login.php" target="_blank">file</a>.
+
+Untuk contoh CRUD _(create, read, update, delete)_ bisa dilihat di file Master User. Berikut link <a href="https://raw.githubusercontent.com/uddinmtm/inventori/master/public/m_items.php" target="_blank">frontend</a>, <a href="https://raw.githubusercontent.com/uddinmtm/inventori/master/public/actions/items.php" target="_blank">backend</a>.
+
+Untuk project secara keseluruhannya bisa diambil di sini <a href="https://github.com/uddinmtm/inventori" target="_blank">github</a>. Disini aku mengerjakannya dengan temen ku, <a href="https://github.com/msapuan" target="_blank">Sapuan</a> namanya.
