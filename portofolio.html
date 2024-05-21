@@ -1,0 +1,19 @@
+---
+layout: default
+title: Portofolio
+---
+<h1>Portofolio</h1>
+<ul>
+    {% for item in site.data.portofolios %}
+        <li>
+            <h3>{{ item.name }}</h3>
+            <div>
+              <small><strong>{{ item.role }} ▪ </strong></small>
+              {% for stack in item.stacks %}
+              <small>[{{ stack }}]</small>
+              {% endfor %}
+            </div>            
+            <p>{{ item.description }}</p>
+        </li>
+    {% endfor %}
+</ul>

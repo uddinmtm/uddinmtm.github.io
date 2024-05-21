@@ -1,4 +1,6 @@
 - name: Home
   link: /
+- name: Portofolio
+  link: /portofolio.html
 - name: Blog
   link: /blog.html

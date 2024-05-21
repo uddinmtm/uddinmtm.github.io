@@ -31,7 +31,7 @@ header {
       li {
         float: left;
         list-style-type: none;
-        padding: 0 16px 0 0;
+        padding: 0 16px 0 0;        
       }
     }
   }
@@ -67,6 +67,13 @@ a {
 
 article {
   margin-bottom: 1.7em;
+  ul {
+    li {
+      p {
+        margin-top: 2px;
+      }
+    }
+  }
 }
 
 footer {

@@ -1,0 +1,40 @@
+- name: Taxmapper
+  link: #
+  role: Backend Engineer
+  stacks: ['PHP', 'Java', 'Mysql']
+  description: Aplikasi untuk merekam data transaksi pajak pada outlet objek pajak.
+- name: Aplikasi Pelatihan LPDP
+  link: #
+  role: Backend Engineer
+  stacks: ['PHP', 'Symfony', 'Mysql', 'Google API']
+  description: Aplikasi untuk managemen pelatihan bagi siswa LPDP.
+- name: Management App for ZTE (Zero Touch Enrollment) Chromebook
+  link: #
+  role: Backend Engineer
+  stacks: ['NodeJs', 'ExpressJs', 'Mysql', 'Google API']
+  description: Aplikasi untuk mendaftarkan / Enrollment Chromebook secara massal.
+- name: SIPPAS DLHK Sidoarjo
+  link: #
+  role: Backend Engineer
+  stacks: ['PHP', 'CodeIgniter', 'Mysql', 'Payment Gateway']
+  description: Sistem Informasi Pengelolaan Sampah di TPA Griyo Mulyo Jabon.
+- name: TaskToDo App
+  link: /
+  role: Backend Engineer
+  stacks: ['PHP', 'Laravel', 'Mysql', 'Push Notification']
+  description: Aplikasi untuk management task bagi pegawai dengan reminder.
+- name: ApemSeger
+  link: /
+  role: Backend Engineer
+  stacks: ['PHP', 'Laravel', 'Mysql']
+  description: Aplikasi pemetaan sekolah di Gresik.
+- name: E-SPTPD Kab. Sidoarjo
+  link: #
+  role: Backend Engineer
+  stacks: ['PHP', 'Oracle', 'Payment Gateway']
+  description: Aplikasi ini adalah aplikasi yang dibuat guna memudahkan wajib pajak dalam pengurusan berkas SPTPD serta melakukan pembayaran.
+- name: API Service Carikosan App
+  link: #
+  role: Backend Engineer
+  stacks: ['PHP', 'Slim Framework', 'Payment Gateway']
+  description: API Service untuk aplikasi pencarian dan pemesanan kos secara online.
