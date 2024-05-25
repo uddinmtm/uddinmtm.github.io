@@ -1,3 +1,8 @@
+- name: CheckPoint Tirta App
+  link: https://tirta-app-nt2t.vercel.app/
+  role: Frontend Engineer
+  stacks: ['Javascript', 'React', 'NextJs', 'Firebase']
+  description: Aplikasi untuk mendata tiap kendaraan tangki yang masuk untuk mengisi Air.
 - name: Taxmapper
   link: #
   role: Backend Engineer

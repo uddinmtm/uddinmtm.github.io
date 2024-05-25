@@ -6,7 +6,7 @@ title: Portofolio
 <ul>
     {% for item in site.data.portofolios %}
         <li>
-            <h3>{{ item.name }}</h3>
+            <h3><a href="{{ item.link }}" target="_blank">{{ item.name }}</a></h3>
             <div>
               <small><strong>{{ item.role }} ▪ </strong></small>
               {% for stack in item.stacks %}
